@@ -1,11 +1,11 @@
 <template>
-  <div>app happy birthday to you</div>
+  <div>app</div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style>
+<style lang="scss">
 #app {
-  color: red;
+  color: #000;
 }
 </style>
