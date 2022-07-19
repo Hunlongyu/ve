@@ -6,11 +6,18 @@ const preload = join(__dirname, '../preload/index.js')
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = 'true'
 
 app.whenReady().then(() => {
-  new BrowserWindow({
+  const win = new BrowserWindow({
     webPreferences: {
       preload,
       nodeIntegration: true,
       contextIsolation: false
     }
-  }).loadURL('http://127.0.0.1:5173')
+  })
+  if (app.isPackaged) {
+    const path = join(__dirname, '../')
+    const filePath = join(path, 'index.html')
+    win.loadFile(filePath)
+  } else {
+    win.loadURL('http://127.0.0.1:5173')
+  }
 })

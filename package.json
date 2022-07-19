@@ -5,7 +5,7 @@
   "main": "dist/main/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vue-tsc --noEmit && vite build && electron-builder"
   },
   "keywords": [
     "vite3",
@@ -32,5 +32,8 @@
   },
   "dependencies": {
     "vue": "^3.2.37"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
