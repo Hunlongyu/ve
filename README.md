@@ -1,11 +1,11 @@
 ## feature
 
-[ ] Vue3
-[ ] Vite3
-[ ] Typescript
-[ ] Eslint
-[ ] Prettier
-[ ] Electron-builder
+- [x] Vue3
+- [x] Vite3
+- [x] Typescript
+- [x] Eslint
+- [x] Prettier
+- [x] Electron-builder
 
 ```bash
 npm i
