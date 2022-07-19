@@ -1,24 +1,11 @@
 ## feature
 
-[ ] vue3
-[ ] vite3
+[ ] Vue3
+[ ] Vite3
 [ ] Typescript
-[ ] eslint
+[ ] Eslint
 [ ] Prettier
-[ ] electron-builder
-
-[ ] 多窗口，多页面
-[ ] 优化项目目录结构
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
-[ ]
+[ ] Electron-builder
 
 ```bash
 npm i
