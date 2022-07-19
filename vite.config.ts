@@ -11,7 +11,7 @@ export default defineConfig({
     vue(),
     electron({
       main: {
-        entry: 'electron/main.ts',
+        entry: 'src/main/index.ts',
         vite: {
           build: {
             sourcemap: 'inline',
@@ -21,7 +21,7 @@ export default defineConfig({
       },
       preload: {
         input: {
-          index: join(__dirname, 'electron/preload.ts')
+          index: join(__dirname, 'src/preload/index.ts')
         },
         vite: {
           build: {
