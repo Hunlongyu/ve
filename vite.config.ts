@@ -1,21 +1,36 @@
+import fs from 'fs'
+import { join } from 'path'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import { join } from 'path'
+import electron from 'vite-plugin-electron'
+
+fs.rmSync('dist', { recursive: true, force: true })
 
 export default defineConfig({
-  root: join(__dirname, 'src/renderer'),
   plugins: [
-    vue()
-  ],
-  resolve: {
-    alias: {
-      '@render': join(__dirname, 'src/renderer'),
-      '@main': join(__dirname, 'src/main')
-    }
-  },
-  base: './',
-  build: {
-    outDir: join(__dirname, 'dist/render'),
-    emptyOutDir: true
-  }
+    vue(),
+    electron({
+      main: {
+        entry: 'electron/main.ts',
+        vite: {
+          build: {
+            sourcemap: 'inline',
+            outDir: 'dist/main'
+          }
+        }
+      },
+      preload: {
+        input: {
+          index: join(__dirname, 'electron/preload.ts')
+        },
+        vite: {
+          build: {
+            sourcemap: 'inline',
+            outDir: 'dist/preload'
+          }
+        }
+      },
+      renderer: {}
+    })
+  ]
 })

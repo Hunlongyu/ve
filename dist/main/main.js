@@ -1,0 +1,15 @@
+"use strict";
+const path = require("path");
+const electron = require("electron");
+const preload = path.join(__dirname, "../preload/index.js");
+process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = "true";
+electron.app.whenReady().then(() => {
+  new electron.BrowserWindow({
+    webPreferences: {
+      preload,
+      nodeIntegration: true,
+      contextIsolation: false
+    }
+  }).loadURL("http://127.0.0.1:5173");
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibWFpbi5qcyIsInNvdXJjZXMiOlsiLi4vLi4vZWxlY3Ryb24vbWFpbi50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBqb2luIH0gZnJvbSAncGF0aCdcclxuaW1wb3J0IHsgYXBwLCBCcm93c2VyV2luZG93IH0gZnJvbSAnZWxlY3Ryb24nXHJcblxyXG5jb25zdCBwcmVsb2FkID0gam9pbihfX2Rpcm5hbWUsICcuLi9wcmVsb2FkL2luZGV4LmpzJylcclxuXHJcbnByb2Nlc3MuZW52LkVMRUNUUk9OX0RJU0FCTEVfU0VDVVJJVFlfV0FSTklOR1MgPSAndHJ1ZSdcclxuXHJcbmFwcC53aGVuUmVhZHkoKS50aGVuKCgpID0+IHtcclxuICBuZXcgQnJvd3NlcldpbmRvdyh7XHJcbiAgICB3ZWJQcmVmZXJlbmNlczoge1xyXG4gICAgICBwcmVsb2FkLFxyXG4gICAgICBub2RlSW50ZWdyYXRpb246IHRydWUsXHJcbiAgICAgIGNvbnRleHRJc29sYXRpb246IGZhbHNlXHJcbiAgICB9XHJcbiAgfSkubG9hZFVSTCgnaHR0cDovLzEyNy4wLjAuMTo1MTczJylcclxufSlcclxuIl0sIm5hbWVzIjpbImpvaW4iLCJhcHAiLCJCcm93c2VyV2luZG93Il0sIm1hcHBpbmdzIjoiOzs7QUFHQSxNQUFNLFVBQVVBLEtBQUssS0FBQSxXQUFXLHFCQUFxQjtBQUVyRCxRQUFRLElBQUkscUNBQXFDO0FBRWpEQyxTQUFBQSxJQUFJLFVBQUEsRUFBWSxLQUFLLE1BQU07QUFDekIsTUFBSUMsdUJBQWM7QUFBQSxJQUNoQixnQkFBZ0I7QUFBQSxNQUNkO0FBQUEsTUFDQSxpQkFBaUI7QUFBQSxNQUNqQixrQkFBa0I7QUFBQSxJQUNwQjtBQUFBLEVBQUEsQ0FDRCxFQUFFLFFBQVEsdUJBQXVCO0FBQ3BDLENBQUM7In0=
